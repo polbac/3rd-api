@@ -1,9 +1,10 @@
 const express = require('express')
 const router = express.Router()
-const pokemonRouter = require('./pokemonRouter')
-const jokesRouter = require('./jokesRouter')
 
-router.use('/pokemons', pokemonRouter)
-router.use('/jokes', jokesRouter)
+const apiRouterPokemon = require('./apiRouterPokemons')
+const apiRouterJokes = require('./apiRouterJokes')
+
+router.use('/pokemons', apiRouterPokemon)
+router.use('/jokes', apiRouterJokes)
 
 module.exports = router

@@ -1,14 +1,12 @@
-const axios = require('axios').default;
+const axios = require('axios')
 
-chuckAxios = axios.create({
-    baseURL: process.env.CHUCK_API_BASE_URL
-});
 
+const axiosJokes = axios.create({
+    baseURL: process.env.CHUCK_API_BASE_URL,
+  });
 
 module.exports = {
-    getRandomJoke() {
-        return chuckAxios.get('/jokes/random')
-            .then(res => res.data)
+    randomJoke() {
+        return axiosJokes.get('random')
     },
-    
 }
